@@ -1,18 +1,19 @@
 package BinaryTrees;
 import java.io.*;
 
-public class Node<T> {
-    T data;
-    Node<T> left;
-    Node<T> right;
+public class Node {
+    int data;
+    Node left;
+    Node right;
 
     Node(){
         this.right = null;
         this.left = null;
-        this.data = null;
     }
 
-    public Node(T data) {
+    public Node(int data) {
         this.data = data;
+        this.right = null;
+        this.left = null;
     }
 }
