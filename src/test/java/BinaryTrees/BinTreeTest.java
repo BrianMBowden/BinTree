@@ -38,4 +38,53 @@ class BinTreeTest {
         bt.delete(6);
         assertFalse(bt.contains(6));
     }
+
+
+    @Test
+    void traverseInOrder() {
+        BinTree bt = new BinTree();
+        System.out.println("Testing In-Order");
+        bt = bt.createBinTree();
+        bt.traverseInOrder(bt.root);
+    }
+
+    @Test
+    void traversePreOrder() {
+        BinTree bt = new BinTree();
+        System.out.println("Testing Pre-Order");
+        bt = bt.createBinTree();
+        bt.traversePreOrder(bt.root);
+    }
+
+    @Test
+    void traversePostOrder() {
+        BinTree bt = new BinTree();
+        System.out.println("Testing Post-Order");
+        bt = bt.createBinTree();
+        bt.traversePostOrder(bt.root);
+    }
+
+    @Test
+    void traverseLevelOrder() {
+        BinTree bt = new BinTree();
+        System.out.println("Testing Level-Order");
+        bt = bt.createBinTree();
+        bt.traverseLevelOrder();
+    }
+
+    @Test
+    void tilt() {
+        BinTree bt = new BinTree();
+        System.out.println("Testing tilt");
+
+        bt.root = new Node(4);
+        bt.root.left = new Node(2);
+        bt.root.left.left = new Node(3);
+        bt.root.left.right = new Node(5);
+        bt.root.right = new Node(9);
+        bt.root.right.right = new Node(7);
+
+        assertTrue(bt.tilt() == 15);
+
+    }
 }

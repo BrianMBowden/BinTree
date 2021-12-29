@@ -1,8 +1,13 @@
 package BinaryTrees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.lang.Math;
+
 public class BinTree {
 
     Node root;
+    int tilt;
 
     BinTree(int data){
         root = new Node(data);
@@ -104,4 +109,91 @@ public class BinTree {
     private int findSmallest(Node root){return root.left == null ? root.data : findSmallest(root.left);}
 
     public void delete(int value){root = deleteRecursive(root, value);}
+
+    //Depth First Searches:
+    //In-order - left sub-tree, root node, right sub-tree
+    //Pre-order - root node, left sub-tree, right sub-tree
+    //Post-Order - left sub-tree, right sub-tree, root node
+
+    public void traverseInOrder(Node node){
+        if (node != null){
+            traverseInOrder(node.left);
+            System.out.println(node.data);
+            traverseInOrder(node.right);
+        }
+    }
+
+    public void traversePreOrder(Node node){
+        if (node != null){
+            System.out.println(node.data);
+            traversePreOrder(node.left);
+            traversePreOrder(node.right);
+        }
+    }
+
+    public void traversePostOrder(Node node){
+        if (node != null){
+            traversePostOrder(node.left);
+            traversePostOrder(node.right);
+            System.out.println(node.data);
+        }
+    }
+
+    //Breadth First Search - visits all nodes on that level before moving on
+    public void traverseLevelOrder(){
+        if (root == null) {
+            return;
+        }
+
+        Queue<Node> nodes = new LinkedList<>();
+        nodes.add(root);
+
+        while(!nodes.isEmpty()){
+            Node node = nodes.remove();
+
+            System.out.println(" " + node.data);
+
+            if (node.left != null){
+                nodes.add(node.left);
+            }
+
+            if (node.right != null){
+                nodes.add(node.right);
+            }
+        }
+    }
+
+    public int tilt(){
+        tiltRecursive(root);
+        System.out.println("tilt is: " + this.tilt);
+        return this.tilt;
+    }
+
+    private int tiltRecursive(Node node){
+        if (node == null){
+            System.out.println("returning zero");
+            return 0;
+        }
+
+        System.out.println("Node number: " + node.data);
+
+        int tiltLeft = tiltRecursive(node.left);
+        System.out.println("left tilt of Node " + node.data + ": " + tiltLeft);
+
+        int tiltRight = tiltRecursive(node.right);
+        System.out.println("Right tilt of Node " + node.data + ": " + tiltRight);
+
+        this.tilt += Math.abs(tiltLeft - tiltRight);
+        System.out.println("Total tilt: " + this.tilt);
+
+        return tiltLeft + tiltRight + node.data;
+
+    }
+
+    public static void main(String[] args){
+
+    }
+
+
+
 }
