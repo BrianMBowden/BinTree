@@ -17,16 +17,12 @@ public class BinTree {
         root = null;
     }
 
-    public BinTree createBinTree(){
+    public BinTree createBinTree(int[] data){
         BinTree bt = new BinTree();
 
-        bt.add(6);
-        bt.add(4);
-        bt.add(8);
-        bt.add(3);
-        bt.add(5);
-        bt.add(7);
-        bt.add(9);
+        for(int i = 0; i < data.length; i++){
+            bt.add(data[i]);
+        }
 
         return bt;
     }
@@ -118,14 +114,14 @@ public class BinTree {
     public void traverseInOrder(Node node){
         if (node != null){
             traverseInOrder(node.left);
-            System.out.println(node.data);
+//            System.out.println(node.data);
             traverseInOrder(node.right);
         }
     }
 
     public void traversePreOrder(Node node){
         if (node != null){
-            System.out.println(node.data);
+//            System.out.println(node.data);
             traversePreOrder(node.left);
             traversePreOrder(node.right);
         }
@@ -135,7 +131,7 @@ public class BinTree {
         if (node != null){
             traversePostOrder(node.left);
             traversePostOrder(node.right);
-            System.out.println(node.data);
+//            System.out.println(node.data);
         }
     }
 
@@ -151,7 +147,7 @@ public class BinTree {
         while(!nodes.isEmpty()){
             Node node = nodes.remove();
 
-            System.out.println(" " + node.data);
+//            System.out.println(" " + node.data);
 
             if (node.left != null){
                 nodes.add(node.left);
@@ -165,26 +161,26 @@ public class BinTree {
 
     public int tilt(){
         tiltRecursive(root);
-        System.out.println("tilt is: " + this.tilt);
+//        System.out.println("tilt is: " + this.tilt);
         return this.tilt;
     }
 
     private int tiltRecursive(Node node){
         if (node == null){
-            System.out.println("returning zero");
+//            System.out.println("returning zero");
             return 0;
         }
 
-        System.out.println("Node number: " + node.data);
+//        System.out.println("Node number: " + node.data);
 
         int tiltLeft = tiltRecursive(node.left);
-        System.out.println("left tilt of Node " + node.data + ": " + tiltLeft);
+//        System.out.println("left tilt of Node " + node.data + ": " + tiltLeft);
 
         int tiltRight = tiltRecursive(node.right);
-        System.out.println("Right tilt of Node " + node.data + ": " + tiltRight);
+//        System.out.println("Right tilt of Node " + node.data + ": " + tiltRight);
 
         this.tilt += Math.abs(tiltLeft - tiltRight);
-        System.out.println("Total tilt: " + this.tilt);
+//        System.out.println("Total tilt: " + this.tilt);
 
         return tiltLeft + tiltRight + node.data;
 

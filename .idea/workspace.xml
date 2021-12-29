@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0b9df2e-2666-4ae1-9259-436b8dff1763" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BinaryTrees/BinTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BinaryTrees/BinTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BinaryTrees/BinTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BinaryTrees/BinTreeTest.java" afterDir="false" />
     </list>
@@ -71,7 +69,7 @@
       <recent name="BinaryTrees" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BinTree">
+  <component name="RunManager" selected="Gradle.BinaryTrees [build clean test]">
     <configuration name="BinTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BinaryTrees.BinTree" />
       <module name="BiTree.main" />
@@ -85,7 +83,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTrees [build clean]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+    <configuration name="BinaryTrees [build clean test]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -98,6 +96,7 @@
           <list>
             <option value="build" />
             <option value="clean" />
+            <option value="test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -108,8 +107,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.BinaryTrees [build clean]" />
       <item itemvalue="Application.BinTree" />
+      <item itemvalue="Gradle.BinaryTrees [build clean test]" />
     </list>
     <recent_temporary>
       <list>

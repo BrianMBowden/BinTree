@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BinTreeTest {
 
+    int[] testDataSet1 = {6,4,8,3,5,7,9};
 
     @Test
     void add() {
@@ -15,13 +16,14 @@ class BinTreeTest {
 
     @Test
     void contains() {
+        System.out.println("Testing contains");
         BinTree bt = new BinTree();
-        bt = bt.createBinTree();
+        bt = bt.createBinTree(testDataSet1);
         assertTrue(bt.contains(6));
         assertTrue(bt.contains(7));
 
         assertFalse(bt.contains(1));
-        System.out.println("End of contains");
+
     }
 
     @Test
@@ -33,7 +35,7 @@ class BinTreeTest {
     void delete(){
         BinTree bt = new BinTree();
         System.out.println("Testing delete");
-        bt = bt.createBinTree();
+        bt = bt.createBinTree(testDataSet1);
         assertTrue(bt.contains(6));
         bt.delete(6);
         assertFalse(bt.contains(6));
@@ -44,7 +46,7 @@ class BinTreeTest {
     void traverseInOrder() {
         BinTree bt = new BinTree();
         System.out.println("Testing In-Order");
-        bt = bt.createBinTree();
+        bt = bt.createBinTree(testDataSet1);
         bt.traverseInOrder(bt.root);
     }
 
@@ -52,7 +54,7 @@ class BinTreeTest {
     void traversePreOrder() {
         BinTree bt = new BinTree();
         System.out.println("Testing Pre-Order");
-        bt = bt.createBinTree();
+        bt = bt.createBinTree(testDataSet1);
         bt.traversePreOrder(bt.root);
     }
 
@@ -60,7 +62,7 @@ class BinTreeTest {
     void traversePostOrder() {
         BinTree bt = new BinTree();
         System.out.println("Testing Post-Order");
-        bt = bt.createBinTree();
+        bt = bt.createBinTree(testDataSet1);
         bt.traversePostOrder(bt.root);
     }
 
@@ -68,7 +70,7 @@ class BinTreeTest {
     void traverseLevelOrder() {
         BinTree bt = new BinTree();
         System.out.println("Testing Level-Order");
-        bt = bt.createBinTree();
+        bt = bt.createBinTree(testDataSet1);
         bt.traverseLevelOrder();
     }
 
