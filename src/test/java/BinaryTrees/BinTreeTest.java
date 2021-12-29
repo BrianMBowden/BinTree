@@ -3,12 +3,18 @@ package BinaryTrees;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
 class BinTreeTest {
 
     int[] testDataSet1 = {6,4,8,3,5,7,9};
+    int[] inOrderTest = {3,4,5,6,7,8,9};
+    int[] preOrderTest = {6,4,3,5,8,7,9};
+    int[] postOrderTest = {3,5,4,7,9,8,6};
 
     @Test
     void add() {
@@ -45,25 +51,43 @@ class BinTreeTest {
     @Test
     void traverseInOrder() {
         BinTree bt = new BinTree();
+        Queue<Integer> t = new LinkedList<>();
+        Queue<Integer> expected = new LinkedList<>();
+        for (int data : inOrderTest) {expected.add(data);}
         System.out.println("Testing In-Order");
         bt = bt.createBinTree(testDataSet1);
-        bt.traverseInOrder(bt.root);
+        bt.traverseInOrder(bt.root, t);
+        assertEquals(expected.size(), t.size());
+        while (!expected.isEmpty()) {
+            assertSame(expected.remove(), t.remove());}
     }
 
     @Test
     void traversePreOrder() {
         BinTree bt = new BinTree();
+        Queue<Integer> t = new LinkedList<>();
+        Queue<Integer> expected = new LinkedList<>();
+        for (int data : preOrderTest) {expected.add(data);}
         System.out.println("Testing Pre-Order");
         bt = bt.createBinTree(testDataSet1);
-        bt.traversePreOrder(bt.root);
+        bt.traversePreOrder(bt.root, t);
+        assertEquals(expected.size(), t.size());
+        while (!expected.isEmpty()) {
+            assertSame(expected.remove(), t.remove());}
     }
 
     @Test
     void traversePostOrder() {
         BinTree bt = new BinTree();
+        Queue<Integer> t = new LinkedList<>();
+        Queue<Integer> expected = new LinkedList<>();
+        for (int data : postOrderTest) {expected.add(data);}
         System.out.println("Testing Post-Order");
         bt = bt.createBinTree(testDataSet1);
-        bt.traversePostOrder(bt.root);
+        bt.traversePostOrder(bt.root, t);
+        assertEquals(expected.size(), t.size());
+        while (!expected.isEmpty()) {
+            assertSame(expected.remove(), t.remove());}
     }
 
     @Test
@@ -86,7 +110,7 @@ class BinTreeTest {
         bt.root.right = new Node(9);
         bt.root.right.right = new Node(7);
 
-        assertTrue(bt.tilt() == 15);
+        assertEquals(15, bt.tilt());
 
     }
 }

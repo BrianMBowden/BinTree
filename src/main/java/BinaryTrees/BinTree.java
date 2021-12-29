@@ -111,26 +111,29 @@ public class BinTree {
     //Pre-order - root node, left sub-tree, right sub-tree
     //Post-Order - left sub-tree, right sub-tree, root node
 
-    public void traverseInOrder(Node node){
+    public void traverseInOrder(Node node, Queue<Integer> t){
         if (node != null){
-            traverseInOrder(node.left);
+            traverseInOrder(node.left, t);
+            t.add(node.data);
 //            System.out.println(node.data);
-            traverseInOrder(node.right);
+            traverseInOrder(node.right, t);
         }
     }
 
-    public void traversePreOrder(Node node){
+    public void traversePreOrder(Node node, Queue<Integer> t){
         if (node != null){
+            t.add(node.data);
 //            System.out.println(node.data);
-            traversePreOrder(node.left);
-            traversePreOrder(node.right);
+            traversePreOrder(node.left, t);
+            traversePreOrder(node.right, t);
         }
     }
 
-    public void traversePostOrder(Node node){
+    public void traversePostOrder(Node node, Queue<Integer> t){
         if (node != null){
-            traversePostOrder(node.left);
-            traversePostOrder(node.right);
+            traversePostOrder(node.left, t);
+            traversePostOrder(node.right, t);
+            t.add(node.data);
 //            System.out.println(node.data);
         }
     }
